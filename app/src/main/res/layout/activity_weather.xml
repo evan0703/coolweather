@@ -10,14 +10,21 @@
         android:layout_height="match_parent"
         android:id="@+id/bing_pic_img"
         android:scaleType="centerCrop"/>
-
-    <ScrollView
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipe_refresh">
+        <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
         android:overScrollMode="never"
         android:id="@+id/weather_layout">
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -28,7 +35,19 @@
             <include layout="@layout/forecast"/>
             <include layout="@layout/aqi"/>
             <include layout="@layout/suggestion"/>
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/choose_are_fragment"
+        android:name="com.example.coolweather.ChooseAreaFragment"/>
+
+
+
+    </android.support.v4.widget.DrawerLayout>
+
 
 </FrameLayout>
